@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARCOMILY BUSINESS COMPANY - Mauzo ya Magari, Nyumba na Nafaka</title>
+    <style>
+        /* Reset na Styles za Msingi */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5dc; /* Beige nyepesi kwa background */
+            color: #333;
+        }
+        
+        /* Nembo ya Juu */
+        .logo-header {
+            background: linear-gradient(135deg, #8B4513, #A0522D); /* Brown gradient */
+            color: #FFD700; /* Njano kwa maandishi */
+            text-align: center;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo-main {
+            font-size: 2.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 0.3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo-sub {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Menyu ya Navigation */
+        nav {
+            background-color: #000000; /* Nyeusi */
+            padding: 0.8rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: #FFD700; /* Njano */
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background-color: #8B4513; /* Brown */
+            color: white;
+        }
+        
+        /* Sehemu Kuu */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #D2B48C; /* Border ya brown nyepesi */
+        }
+        
+        h2 {
+            color: #8B4513; /* Brown */
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #FFD700; /* Njano */
+        }
+        
+        /* Bidhaa */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #D2B48C; /* Border ya brown nyepesi */
+        }
+        
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(139, 69, 19, 0.2); /* Shadow ya brown */
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #FFD700; /* Njano */
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            background-color: #FFF8DC; /* Background ya njano nyepesi */
+        }
+        
+        .product h3 {
+            color: #8B4513; /* Brown */
+            margin-bottom: 0.8rem;
+        }
+        
+        .product p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #8B4513; /* Brown */
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #8B4513; /* Brown */
+            color: #FFD700; /* Njano */
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 0.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid #D2B48C;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background: #FFD700; /* Njano */
+            color: #8B4513; /* Brown */
+            border-color: #8B4513;
+        }
+        
+        /* Fomu ya Mawasiliano */
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select,
+        .contact-form button {
+            padding: 0.8rem;
+            border: 1px solid #D2B48C;
+            border-radius: 4px;
+            font-family: inherit;
+            background-color: #FFF8DC;
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            background: #8B4513; /* Brown */
+            color: #FFD700; /* Njano */
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background: #FFD700; /* Njano */
+            color: #8B4513; /* Brown */
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #8B4513, #000000); /* Brown to nyeusi */
+            color: #FFD700; /* Njano */
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Animation ya Logo */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .logo-main {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .logo-sub {
+            animation: fadeIn 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-main {
+                font-size: 2rem;
+            }
+            
+            .logo-sub {
+                font-size: 1.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 0.3rem 0;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nembo ya Juu -->
+    <header class="logo-header">
+        <div class="logo-main">BARCOMILY</div>
+        <div class="logo-sub">BUSINESS COMPANY</div>
+    </header>
+    
+    <!-- Menyu ya Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home">Nyumbani</a>
+            <a href="#magari">Magari</a>
+            <a href="#nyumba">Nyumba</a>
+            <a href="#nafaka">Nafaka</a>
+            <a href="#contact">Mawasiliano</a>
+        </div>
+    </nav>
+    
+    <!-- Maudhui -->
+    <div class="container">
+        <section id="home">
+            <h2>Karibu BARCOMILY BUSINESS COMPANY</h2>
+            <p>Tunauza bidhaa na huduma za hali ya juu kwa bei nafuu:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem; color: #5D4037;">
+                <li>Magari ya kuvutia na yaliyohudumiwa vyema</li>
+                <li>Nyumba nzuri katika maeneo mbalimbali</li>
+                <li>Nafaka za aina mbalimbali na ubora wa hali ya juu</li>
+            </ul>
+        </section>
+        
+        <section id="magari">
+            <h2>Magari Tunayouza</h2>
+            <p>Chagua kati ya magari yetu ya hali ya juu:</p>
+            
+            <div class="products">
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gari la Sport" class="product-img">
+                    <div class="product-info">
+                        <h3>Toyota RAV4</h3>
+                        <p>Gari jipya la mwaka 2022, kilometa 5,000 pekee, rangi nyeusi</p>
+                        <div class="price">Tsh 45,000,000</div>
+                        <a href="#contact" class="btn">Uliza Maelezo</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gari la Familia" class="product-img">
+                    <div class="product-info">
+                        <h3>Nissan X-Trail</h3>
+                        <p>Gari la familia lenye nafasi nyingi, mwaka 2019, dizeli</p>
+                        <div class="price">Tsh 32,000,000</div>
+                        <a href="#contact" class="btn">Uliza Maelezo</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gari la Biashara" class="product-img">
+                    <div class="product-info">
+                        <h3>Toyota Hilux</h3>
+                        <p>Gari la biashara lenye uimara, mwaka 2020, double cabin</p>
+                        <div class="price">Tsh 50,000,000</div>
+                        <a href="#contact" class="btn">Uliza Maelezo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="nyumba">
+            <h2>Nyumba Zinazouzwa</h2>
+            <p>Angalia nyumba zetu zinazouzwa katika maeneo mbalimbali:</p>
+            
+            <div class="products">
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nyumba ya Familia" class="product-img">
+                    <div class="product-info">
+                        <h3>Nyumba ya Familia - Mikocheni</h3>
+                        <p>Nyumba nzima yenye vyumba 4, bafu 3, na ua mbele na nyuma</p>
+                        <div class="price">Tsh 450,000,000</div>
+                        <a href="#contact" class="btn">Uliza Maelezo</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nyumba ya Ghorofa" class="product-img">
+                    <div class="product-info">
+                        <h3>Ghorofa - Kariakoo</h3>
+                        <p>Ghorofa yenye vyumba 3, jikoni kubwa, na eneo la maegesho</p>
+                        <div class="price">Tsh 320,000,000</div>
+                        <a href="#contact" class="btn">Uliza Maelezo</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nyumba ya Mjini" class="product-img">
+                    <div class="product-info">
+                        <h3>Nyumba ya Mjini - Tabata</h3>
+                        <p>Nyumba yenye vyumba 2, bafu 1, na jiko ndogo</p>
+                        <div class="price">Tsh 120,000,000</div>
+                        <a href="#contact" class="btn">Uliza Maelezo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="nafaka">
+            <h2>Nafaka Tunazouza</h2>
+            <p>Nafaka zetu za ubora wa hali ya juu:</p>
+            
+            <div class="products">
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mchele" class="product-img">
+                    <div class="product-info">
+                        <h3>Mchele wa Super</h3>
+                        <p>Mchele wa hali ya juu, safi bila mawe, kilo 50 kwa gunia</p>
+                        <div class="price">Tsh 80,000 / gunia</div>
+                        <a href="#contact" class="btn">Agiza Sasa</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Uwele" class="product-img">
+                    <div class="product-info">
+                        <h3>Uwele wa Pamba</h3>
+                        <p>Uwele wa pamba safi, wa kupikia na wa kunywa, kilo 25 kwa gunia</p>
+                        <div class="price">Tsh 60,000 / gunia</div>
+                        <a href="#contact" class="btn">Agiza Sasa</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Maharage" class="product-img">
+                    <div class="product-info">
+                        <h3>Maharage ya Kunde</h3>
+                        <p>Maharage ya kunde safi, yenye virutubisho vingi, kilo 30 kwa gunia</p>
+                        <div class="price">Tsh 75,000 / gunia</div>
+                        <a href="#contact" class="btn">Agiza Sasa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Tuwasiliane</h2>
+            <p>Tuma ujumbe wetu kwa maelezo zaidi au kuweka agizo:</p>
+            
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Jina lako" required>
+                <input type="tel" placeholder="Namba ya Simu" required>
+                <input type="email" placeholder="Barua pepe yako (si lazima)">
+                <select required>
+                    <option value="">Chagua bidhaa unayohusika nayo</option>
+                    <option value="magari">Magari</option>
+                    <option value="nyumba">Nyumba</option>
+                    <option value="nafaka">Nafaka</option>
+                    <option value="zingine">Zingine</option>
+                </select>
+                <textarea placeholder="Ujumbe wako" required></textarea>
+                <button type="submit">Tuma Ujumbe</button>
+            </form>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> BARCOMILY BUSINESS COMPANY. Haki zote zimehifadhiwa.</p>
+        <p style="margin-top: 0.5rem;">Simu: +255 785 804 642 | Email: emmanuelbarnabas2003@gmail.com</p>
+    </footer>
+    
+    <script>
+        // Kuweka mwaka wa sasa kwenye footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Kushughulikia fomu
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Pata maadili ya fomu
+            const jina = this.elements[0].value;
+            const simu = this.elements[1].value;
+            const bidhaa = this.elements[3].value;
+            
+            // Kwa mfano huu, tutaonyesha taarifa tu
+            alert(`Asante ${jina}! Ujumbe wako kuhusu ${bidhaa} umepokelewa. Tutawasiliana nawe kupitia ${simu} hivi karibuni.`);
+            
+            // Safisha fomu
+            this.reset();
+        });
+        
+        // Smooth scrolling kwa viungo vya navigation
+        document.querySelectorAll('nav a').forEach(kiungo => {
+            kiungo.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const sehemu = this.getAttribute('href');
+                const lengo = document.querySelector(sehemu);
+                
+                window.scrollTo({
+                    top: lengo.offsetTop - 120,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Ongeza mvuto kwenye nembo
+        const logo = document.querySelector('.logo-header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                logo.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+                logo.style.padding = '1rem 0';
+            } else {
+                logo.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                logo.style.padding = '1.5rem 0';
+            }
+        });
+    </script>
+</body>
+</html>
